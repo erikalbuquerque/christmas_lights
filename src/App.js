@@ -1,6 +1,15 @@
 import React from "react";
-function App() {
-  return <h1>Christmas Lights</h1>;
-}
+import GlobalStyle from "./styles/globalStyles";
+import Light from "./components/Light";
+
+const App = () => {
+  return (
+    <>
+      <GlobalStyle />
+      <Light />
+      <h1>Christmas Lights</h1>
+    </>
+  );
+};
 
 export default App;
