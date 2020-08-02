@@ -1,9 +1,14 @@
 import styled, { keyframes } from "styled-components";
 
 const pulseLight = (shadow) => keyframes`
- to {
+  0%,
+  100% {
    box-shadow: -10px 10px 32px 3px ${shadow};
    opacity: 1;
+ }
+ 50% {
+  box-shadow: none;
+  opacity: 0.2;
  }
 `;
 
@@ -15,9 +20,9 @@ export const Content = styled.div`
   box-shadow: 0 0 0 0 transparent;
   border-radius: 64px 0px;
   transform: rotate(-45deg);
-  animation: ${(props) => pulseLight(props.color)} 1s infinite;
-  animation-delay: ${(props) => props.delay}s;
-  opacity: 0.2;
+  animation: ${(props) => pulseLight(props.color)} ${(props) => props.duration}
+    infinite;
+  animation-delay: 0s;
 
   &:after {
     content: "";
@@ -32,7 +37,6 @@ export const Content = styled.div`
     border-bottom: 2px solid #444;
   }
   &:before {
-    position: absolute;
     content: "";
     transform: rotate(45deg);
     top: 0;
