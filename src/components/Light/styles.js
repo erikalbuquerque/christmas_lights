@@ -20,9 +20,10 @@ export const Content = styled.div`
   box-shadow: 0 0 0 0 transparent;
   border-radius: 64px 0px;
   transform: rotate(-45deg);
-  animation: ${(props) => pulseLight(props.color)} ${(props) => props.duration}
-    infinite;
+  animation: ${(props) => (props.light ? pulseLight(props.color) : "")}
+    ${(props) => props.duration} infinite;
   animation-delay: 0s;
+  opacity: 0.2;
 
   &:after {
     content: "";

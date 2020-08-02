@@ -8,11 +8,13 @@ export const Content = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #e21212;
+  background: transparent;
   height: 32px;
   width: 32px;
   font-size: 8px;
   border: none;
+  border: 1px solid ${(props) => (props.light ? "#0f0" : "#f00")};
+  color: ${(props) => (props.light ? "#0f0" : "#f00")};
   border-radius: 50%;
   padding: 10px 5px;
   cursor: pointer;

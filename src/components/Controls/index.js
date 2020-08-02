@@ -11,7 +11,9 @@ const Controls = () => {
   }
   return (
     <Content>
-      <Button onClick={() => handleButton()}>{!light ? "OFF" : "ON"}</Button>
+      <Button onClick={() => handleButton()} light={light}>
+        {!light ? "OFF" : "ON"}
+      </Button>
     </Content>
   );
 };
